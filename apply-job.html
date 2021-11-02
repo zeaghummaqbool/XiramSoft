@@ -1,0 +1,189 @@
+<!-- php code for check it user is login or not if user is not login he go to login page -->
+<?php
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location: php/loginsystem/login.php");
+  exit;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>XiramSoft - The Way of Innovation</title>
+    <!-- Favicon -->
+    <link href="assets/images/favicon.png" type="image/png" rel="icon">
+
+    <!-- all css files -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/OwlCarousel2-develop/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/jquery-nice-select-master/css/nice-select.css">
+    <link rel="stylesheet" href="assets/plugins/magnific-popup/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/specing.min.css">
+</head>
+
+<body id="top">
+    
+    <!-- start preloader -->
+    <div class="preloader-wrapper">
+        <div class="preloader-inner">
+            <div class="loader">
+                <div class="ball-spin-fade-loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end preloader -->
+
+    <!-- START search-wrapper -->
+    <div class="search-wrapper position-fixed d-flex align-items-center justify-content-center z-index-1">
+        <div class="search-close-wrap">
+            <p class="search-close-btn text-center rounded-circle opacity-50-hover" role="button"><span class="fas fa-times"></span></p>
+        </div>
+        <form action="#">
+            <div class="form-group d-flex m-0">
+                <input class="form-control shadow-none" type="search" placeholder="Type here">
+                <button type="submit" class="bg-transparent border-0 opacity-50-hover"><span class="fas fa-search"></span></button>
+            </div>
+        </form>
+    </div>
+    <!-- END search-wrapper -->
+
+    <!-- start of header -->
+   <div id="header"></div>
+    <!-- end of header -->
+
+    <!-- start page-header -->
+    <section class="section page-header style-bottom-white bg-cover" style="background-image: url(assets/images/bg-breadcrumb-01.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center text-white">
+                    <h1 class="mb-15">Apply Job</h1>
+                    <p>Know more us what we offer to you. Many are satisfied of our services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end page-header -->
+
+    <!-- start apply-job section -->
+    <section class="section apply-job-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <span>Apply Now</span>
+                        <h2 class="h1">Apply For Job</h2>
+                    </div>
+                    <!-- /section-heading -->
+                </div>
+                <div class="col-md-12">
+<!-- this is php link -->
+
+?>
+<?php include 'php/job.php' ?>
+                    <!-- <form action = "/XiramSoft/php/job.php" method = "post" enctype="multipart/form-data"> -->
+                    <form action = "php/job.php" method = "post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mt-30">
+                                <input class="form-control" type="text" placeholder="Your full name" name= "name">
+                            </div>
+                            <div class="col-xl-3 col-md-6 mt-30">
+                                <select name="cat">
+                                    <option selected disabled>Select a category</option>
+                                    <option value="Android Developer">Android Developer</option>
+                                    <option value="Asp.Net Developer">Asp.Net Developer</option>
+                                    <option value="Back-end Developer">Back-end Developer</option>
+                                    <option value="PHP Laravel Developer">PHP Laravel Developer</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mt-30">
+                                <input class="form-control" type="text" placeholder="Phone number" name = "phone">
+                            </div>
+                            <div class="col-xl-3 col-md-6 mt-30">
+                                <input class="form-control" type="text" placeholder="Your Qualification" name= "qualification">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl col-md-6 mt-30">
+                                <input class="form-control" type="text" placeholder="Your Address" name="adress">
+                            </div>
+                            <div class="col-xl col-md-6 mt-30">
+                                <div class="custom-file-upload">
+                                    <input type="file" class="form-control" id="customFile" name="file">
+                                    <label class="custom-file-label" for="customFile" name="file">Upload CV/Resume</label>
+                                </div>
+                            </div>
+                            <div class="col-xl col-md-6 mt-30">
+                                <input class="form-control" type="email" placeholder="Your email address" name="email">
+                            </div>
+                            <div class="col-xl-3 col-md-6 mt-30">
+                                <button type="submit" class="btn btn-sm btn-primary shadow w-100">APPLY NOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end apply-job section -->
+
+    <!-- start job-apply-conditions -->
+    <section class="section job-apply-conditions pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about-info-item">
+                        <div class="about-info-img bg-black-300">
+                            <img src="assets/images/jobs/001-coding.png" alt="">
+                        </div>
+                        <h3 class="mt-35 pb-30 border-bottom">Job Apply Conditions</h3>
+                        <h3 class="text-success">Discription</h3>
+                        <p class="mt-30 pb-30 border-bottom">Select your skilled vacancies above and fill out relevant forms to apply. Include as much information as possible.</p>
+                        <h3 class="text-success">Review process</h3>
+                        <p class="mt-30 pb-30 border-bottom">One of our expert will review your application and may give you a call or email for interview scheduling or any other questions they might have.</p>
+                        <h3 class="text-success">Interview process</h3>
+                        <p class="mt-30 pb-30 border-bottom">Our experienced recruiters will interview you on your schedule to assess your expertise. You might have to pass a technical test depending on the job type.</p>
+                        <h3 class="text-success">Welcome to our company</h3>
+                        <p class="mt-30 pb-30 border-bottom">If everything goes your way, your are welcome to join us on your appointed date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end job-apply-conditions -->
+
+    
+    <!-- start footer -->
+   <div id="footer"></div>
+    <!-- end footer -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/OwlCarousel2-develop/dist/owl.carousel.min.js"></script>
+    <script src="assets/plugins/jquery-nice-select-master/js/jquery.nice-select.min.js"></script>
+    <script src="assets/plugins/magnific-popup/js/magnific-popup.min.js"></script>
+    <script src="assets/plugins/isotope/isotope.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script>
+        $("#header").load("assets/pakages/header.html");
+        $("#footer").load("assets/pakages/footer.html");
+    </script>
+</body>
+
+
+</html>
